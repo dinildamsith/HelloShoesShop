@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../img/logo2.png" sizes="32x32">
+  <meta charset="UTF-8">
+  <title>Employee Service</title>
+
+  <link rel="stylesheet" href="../css/loginPage.css">
+  <link rel="stylesheet" href="../css/menuBar.css">
+  <link rel="stylesheet" href="../css/txt.css">
+  <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/menuBar.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome for icons -->
+  <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div id="mobile_navi">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">&times;</a>
+
+    <div class="col">
+      <img src="../img/logo2.png" alt="" class="mx-auto d-block logoCss">
+    </div>
+
+    <div class="col mt-5 text-center">
+      <a href="../view/adminPanel.html">
+          <button class="btn btn-lg btnCss text-white">
+              <img src="../img/ap.png" alt="" class="btnImageCss ">
+              Dash Board
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/customerPage.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/cus.png" alt="" class="btnImageCss">
+              Customers
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/item.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/sh.png" alt="" class="btnImageCss">
+              Inventory
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/order.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/buy.png" alt="" class="btnImageCss saleImage">
+              Sale
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/supplier.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/sup.png" alt="" class="btnImageCss">
+              Suppliers
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/employee.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/emp.png" alt="" class="btnImageCss">
+              Employees
+          </button>
+      </a>
+  </div>
+
+    <div class="col mt-5 text-center">
+      <a href="../view/login.html">
+        <button class="btn  btn-lg btnCss text-white mt-3">
+          <img src="../img/logOut.png" alt="" class="btnImageCss">
+          Log Out
+        </button>
+      </a>
+    </div>
+
+  </div>
+
+  <div id="main">
+    <span id="menuButton" style="font-size:30px;cursor:pointer; color: #000000" onclick="openNav()">&#9776;</span>
+  </div>
+
+</div>
+
+
+
+<div class="container-fluid dashBordSet">
+
+  <div class="row ">
+
+    <div class="col-12 col-xxl-9 col-xl-9 col-lg-9 col-md-9">
+      <h1>Employee Service</h1>
+    </div>
+
+    <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-3">
+      <div class="form-group">
+        <div class="search-container" style="position: relative;">
+          <input type="text" class="form-control fw-bold " id="employeeSearchTxt" placeholder=""/>
+          <i class="fas fa-search search-icon" id="employeeSearchBtn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></i>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 rowColur">
+
+      <div class="col-3 col-xl-3 col-lg-3 ">
+        <div class="row mt-4 justify-content-center align-items-center">
+          <div class="text-center">
+            <h5>Select Employee Image</h5>
+            <img src="../img/selectEmp.png" alt="" id="selectEmpImage" class="img-fluid" >
+            <form action="/action_page.php" class="mt-1">
+              <input type="file" id="empSelectImage" name="filename" class="d-none" onchange="displaySelectedImage(event)">
+              <label for="empSelectImage" class="btn btn-primary mt-2 col-8">Browse</label>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-9 mt-3">
+
+        <div class="row ">
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="employeeCodeTxt" class="text-black fw-bold ">Employee  Code</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="employeeCodeTxt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="employeeNameTxt" class="text-black fw-bold ">Employee Name</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="employeeNameTxt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="form-group">
+              <label for="employeeGenderOption" class="text-black fw-bold">Gender</label>
+              <div class="search-container">
+                <select class="form-select border border-1  fw-bold" aria-label="Default select example" id="employeeGenderOption">
+                  <option selected value="">Select Gender</option>
+                  <option  value="MALE">MALE</option>
+                  <option  value="FEMALE">FEMALE</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="form-group">
+              <label for="empStatusOption" class="text-black fw-bold">Status</label>
+              <div class="search-container">
+                <select class="form-select border border-1  fw-bold" aria-label="Default select example" id="empStatusOption">
+                  <option selected value="">Select Status</option>
+                  <option value="MARRIED">MARRIED</option>
+                  <option  value="SINGLE">SINGLE</option>
+                  <option  value="DIVORCED">DIVORCED</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="designationTxt" class="text-black fw-bold ">Designation</label>
+              <div class="search-container">
+                <select class="form-select border border-1  fw-bold" aria-label="Default select example" id="designationTxt">
+                  <option selected value="">Select Designation</option>
+                  <option  value="Manager">Manager</option>
+                  <option value="Senior Sales Assistant">Senior Sales Assistant</option>
+                  <option value="Accountant">Accountant</option>
+                  <option value="Sales Assistant">Sales Assistant</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="form-group">
+              <label for="roleOption" class="text-black fw-bold">Role</label>
+              <div class="search-container">
+                <select class="form-select border border-1  fw-bold" aria-label="Default select example" id="roleOption">
+                  <option selected value="">Select Status</option>
+                  <option value="ADMIN">ADMIN</option>
+                  <option  value="USER">USER</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="form-group">
+              <label for="empBirthday" class="text-black fw-bold">Birthday</label>
+              <div class="search-container">
+                <input type="date" class="form-control border border-1  fw-bold" id="empBirthday" name="birthday">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="form-group">
+              <label for="empJoinDate" class="text-black fw-bold">Join Date</label>
+              <div class="search-container">
+                <input type="date" class="form-control border border-1  fw-bold" id="empJoinDate" name="birthday">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3">
+            <div class="form-group">
+              <label for="branchOption" class="text-black fw-bold">Branch</label>
+              <div class="search-container">
+                <select class="form-select border border-1  fw-bold" aria-label="Default select example" id="branchOption">
+                  <option selected value="">Select Branch</option>
+                  <option  value="Avissawella Branch">Avissawella Branch</option>
+                  <option  value="Colombo Branch">Colombo Branch</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          
+        
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="address1Txt" class="text-black fw-bold ">Address 1</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address1Txt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="address2Txt" class="text-black fw-bold ">Address 2</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address2Txt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="address3Txt" class="text-black fw-bold ">Address 3</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address3Txt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="contactTxt" class="text-black fw-bold ">Contact</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="contactTxt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="mailTxt" class="text-black fw-bold ">Mail</label>
+              <div class="search-container">
+                <input type="email" class="form-control fw-bold border border-1  fw-bold " id="mailTxt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="guardiaNameTxt" class="text-black fw-bold ">Guardia Name</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="guardiaNameTxt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+            <div class="form-group">
+              <label for="emgContactTxt" class="text-black fw-bold ">Emergency Contact</label>
+              <div class="search-container">
+                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="emgContactTxt" placeholder="" />
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12 d-flex justify-content-center mt-4 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4  ">
+            <button type="button" class="btn btn-success fw-bold col-12 " id="employeeSaveBtn">Save Supplier</button>
+          </div>
+
+          <div class="col-12 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12 d-flex justify-content-center mt-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4">
+            <button type="button" class="btn btn-warning fw-bold col-12 " id="employeeUpdateBtn">Update Supplier</button>
+          </div>
+
+          <div class="col-12 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12 d-flex justify-content-center mt-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 ">
+            <button type="button" class="btn btn-danger fw-bold col-12 " id="employeeDeleteBtn">Delete Supplier</button>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+      <div class="col-12 mt-3 table-responsive p-0 ">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Employee Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Status</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Role</th>
+            <th scope="col">BirthDay</th>
+            <th scope="col">JoinDay</th>
+            <th scope="col">Branch</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Guardia Name</th>
+          </tr>
+          </thead>
+          <tbody id="employee_Table">
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+  function displaySelectedImage(event) {
+    const selectImage = document.getElementById('selectEmpImage');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function() {
+      selectImage.src = reader.result;
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+</script>
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../Controller/EmployeeController.js" type="module"></script>
+<script src="../Controller/mobileNavJs.js"></script>
+</body>
+</html>

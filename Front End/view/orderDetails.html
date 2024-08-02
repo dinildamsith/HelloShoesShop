@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../img/logo2.png" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Order Details</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/OrderReturnPopupCss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        
+        <div class="col-12 text-center mt-3">
+            <h1>Order Manage</h1>
+        </div>
+
+        <img src="../img/logo2.png" alt="" class="w-25" id="centerLogo" style="opacity: 0.3">
+
+        <div class="d-flex justify-content-end" >
+            <div class="col-4 col-xxl-2 col-xl-3 col-lg-3 col-md-3 col-sm-4">
+                <div class="form-group" id="orderBranchSelect">
+                    <label for="orderBranchOption" class="text-black fw-bold">Branch</label>
+                    <div class="search-container">
+                        <select class="form-select border border-1 fw-bold" aria-label="Default select example" id="orderBranchOption">
+                            <option value="" disabled>Select Branch</option>
+                            <option  value="allBranch">All Branch</option>
+                            <option  value="Avissawella Branch">Avissawella Branch</option>
+                            <option  value="Colombo Branch">Colombo Branch</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 mt-5 ">
+
+            <table class="table">
+                <thead >
+                <tr>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Buy Date</th>
+                    <th scope="col">Customer Id</th>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Pay Method</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Employee Id</th>
+
+                </tr>
+                </thead>
+                <tbody id="orderDetailsTable"  style="opacity: 0.8;" class="fw-bold ">
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+<!--        ////////////////////////////////////////  Order Return View /////////////////////////////////////////-->
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="text-center fw-bold">Order Return</h2>
+
+                <div class="row mt-3">
+
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="returnIdTxt" class="text-black fw-bold ">Return Code</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="returnIdTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="returnDateTxt" class="text-black fw-bold ">Return Date</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="returnDateTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="returnOrderCodeTxt" class="text-black fw-bold ">Return Order Code</label>
+                            <div class="search-container">
+                                <input class="form-control fw-bold border border-1  fw-bold " id="returnOrderCodeTxt" placeholder=""  />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="orderBuyDateTxt" class="text-black fw-bold ">Order Buy Date</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="orderBuyDateTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="itemCodeTxt" class="text-black fw-bold ">Item Code</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="itemCodeTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="itemDescTxt" class="text-black fw-bold ">Item Description</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="itemDescTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3  mt-3">
+                        <div class="form-group">
+                            <label for="itemSizeTxt" class="text-black fw-bold ">Size</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="itemSizeTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3  mt-3">
+                        <div class="form-group">
+                            <label for="qtyTxt" class="text-black fw-bold ">Quantity</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="qtyTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6  mt-3">
+                        <div class="form-group">
+                            <label for="orderTotalTxt" class="text-black fw-bold ">Order Total</label>
+                            <div class="search-container">
+                                <input type="text" class="form-control fw-bold border border-1  fw-bold " id="orderTotalTxt" placeholder="" disabled/>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 d-flex justify-content-end">
+                        <button type="button" class="btn btn-info mt-3 fw-bold" id="orderReturnConformBtn">Order Return</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-12 d-flex justify-content-end">
+                <button type="button" class="btn btn-info mt-3 fw-bold" id="orderReturnBtn">Order Return</button>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../Controller/OrderDetailsController.js" type="module"></script>
+<script src="../Controller/OrderReturnPopup.js" type="module"></script>
+<script src="../Controller/DashBordController.js" type="module"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

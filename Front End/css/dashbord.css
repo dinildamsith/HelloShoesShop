@@ -1,0 +1,16 @@
+.h-200{
+    height: 200px;
+}
+.h-100c{
+    height: 90px;
+}
+.h-511{
+    height: 511px;
+}
+
+@media (max-width: 575px) {
+    .mt-8 {
+        margin-top: 8rem !important;
+    }
+}
+

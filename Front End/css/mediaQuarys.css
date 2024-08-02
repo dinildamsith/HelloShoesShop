@@ -1,0 +1,51 @@
+@media (max-width: 1109px) {
+    .shoes-img {
+        position: absolute;
+        width: 800px;
+        max-width: none; /* Remove any max-width constraint */
+        right: 3%;
+        margin-top: 8rem !important;
+
+    }
+}
+
+@media (max-width: 877px) {
+    .shoes-img {
+        position: absolute;
+        width: 600px;
+        max-width: none; /* Remove any max-width constraint */
+        right: 3%;
+        margin-top: 14rem !important;
+
+    }
+}
+
+@media (max-width: 726px) {
+    .shoes-img {
+        position: absolute;
+        width: 500px;
+        max-width: none; /* Remove any max-width constraint */
+        right: 3%;
+        margin-top: 14rem !important;
+
+    }
+}
+
+@media (max-width: 687px) {
+    .shoes-img {
+        position: absolute;
+        width: 400px;
+        max-width: none; /* Remove any max-width constraint */
+        bottom: 0;
+        margin-top: 23rem !important;
+
+    }
+    #about{
+        font-size: 16px;
+    }
+
+ #companyName{
+     font-size: 36px;
+ }
+
+}

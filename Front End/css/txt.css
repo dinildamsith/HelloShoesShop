@@ -1,0 +1,10 @@
+.custom-outline {
+    border-width: 4px; /* Set the border width */
+    border-color: #000; /* Set the border color */
+    font-weight: bold; /* Set the font weight to bold */
+}
+
+.toast-message {
+    color: black !important;
+    font-weight: bold;
+}

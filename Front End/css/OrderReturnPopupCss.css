@@ -1,0 +1,85 @@
+body {
+    font-family: 'K2D', sans-serif;
+}
+
+
+/* Default styles for input fields */
+input.form-control {
+    color: initial;
+    background-color: initial;
+    border: 1px solid #ced4da;
+    font-weight: normal;
+}
+
+/* Override styles for disabled input */
+input.form-control:disabled {
+    color: initial; /* Remove the custom text color */
+    background-color: initial; /* Remove the custom background color */
+    opacity: 1; /* Ensure full opacity */
+}
+
+/*------------------------------ Pop Up Css--------------------------------------*/
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    opacity: 0; /* Initial state for animation */
+    transition: opacity 0.5s ease-in-out; /* Transition for the background */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 7% auto; /* Centered vertically */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+    transform: translateY(-50px); /* Initial state for animation */
+    transition: transform 0.5s ease-in-out; /* Transition for the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Box shadow added */
+}
+
+/* Show the modal */
+.modal.show {
+    display: block;
+    opacity: 1; /* Final state for animation */
+}
+
+.modal-content.show {
+    transform: translateY(0); /* Final state for animation */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#centerLogo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -99;
+}

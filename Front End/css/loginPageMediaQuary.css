@@ -1,0 +1,18 @@
+@media (max-width: 576px) {
+
+
+    .position-ab{
+        position: absolute;
+    }
+    .trans{
+
+        background-color: transparent !important;
+    }
+
+    .outline-black{
+        --bs-border-opacity: 3;
+        border-color: rgba(var(--bs-black-rgb), var(--bs-border-opacity)) !important;
+    }
+
+
+}

@@ -1,0 +1,77 @@
+body{
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'K2D', sans-serif;
+}
+
+.bg-yellow {
+    background: hsla(41, 100%, 50%, 1);
+    background: linear-gradient(280deg, hsla(41, 100%, 50%, 1) 0%, hsla(41, 29%, 63%, 1) 50%, hsla(41, 100%, 50%, 1) 100%);
+    background: -moz-linear-gradient(280deg, hsla(41, 100%, 50%, 1) 0%, hsla(41, 29%, 63%, 1) 50%, hsla(41, 100%, 50%, 1) 100%);
+    background: -webkit-linear-gradient(265deg, hsla(41, 100%, 50%, 1) 0%, hsla(41, 29%, 63%, 1) 50%, hsla(41, 100%, 50%, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFAD00", endColorstr="#BBAA84", GradientType=1);
+}
+
+
+.height100vh {
+    height: 100vh;
+}
+
+.w-107{
+    width: 108% !important;
+}
+.ml-5 {
+    margin-left: -10% !important;
+}
+.ml-25 {
+    margin-left: 24% !important;
+}
+.ml-1{
+    margin-left: 1% !important;
+}
+.mt-10 {
+    margin-top: 10rem !important;
+}
+.mt-24 {
+    margin-top: 24rem !important;
+}
+
+.w-16 {
+    width: 16% !important;
+}
+.fs-55{
+    font-size: 55px;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+}
+form {
+    height: 21px;
+}
+
+/*text field in icon set*/
+
+.form-outline {
+    position: relative; /* Position the container relative to its children */
+}
+
+.form-outline input {
+    padding-left: 35px; /* Add padding to accommodate the icon */
+}
+
+.form-outline i {
+    position: absolute; /* Position the icon absolutely */
+    left: 10px; /* Adjust the left position of the icon */
+    top: 50%; /* Center the icon vertically */
+    transform: translateY(-50%); /* Adjust the vertical position of the icon */
+    pointer-events: none; /* Disable pointer events on the icon */
+    color: #888; /* Icon color */
+}
+
+
+.bg-shade{
+    background-color: #040405;
+}

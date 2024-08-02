@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../img/logo2.png" sizes="32x32">
+  <meta charset="UTF-8">
+    <title>Stock</title>
+
+  <link rel="stylesheet" href="../css/loginPage.css">
+  <link rel="stylesheet" href="../css/menuBar.css">
+  <link rel="stylesheet" href="../css/txt.css">
+  <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/menuBar.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome for icons -->
+  <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div id="mobile_navi">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">&times;</a>
+
+    <div class="col">
+      <img src="../img/logo2.png" alt="" class="mx-auto d-block logoCss">
+    </div>
+
+    <div class="col mt-5 text-center">
+      <a href="../view/adminPanel.html">
+          <button class="btn btn-lg btnCss text-white">
+              <img src="../img/ap.png" alt="" class="btnImageCss ">
+              Dash Board
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/customerPage.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/cus.png" alt="" class="btnImageCss">
+              Customers
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/item.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/sh.png" alt="" class="btnImageCss">
+              Inventory
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/order.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/buy.png" alt="" class="btnImageCss saleImage">
+              Sale
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/supplier.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/sup.png" alt="" class="btnImageCss">
+              Suppliers
+          </button>
+      </a>
+  </div>
+
+  <div class="col mt-2 text-center">
+      <a href="../view/employee.html">
+          <button class="btn  btn-lg btnCss text-white">
+              <img src="../img/emp.png" alt="" class="btnImageCss">
+              Employees
+          </button>
+      </a>
+  </div>
+
+      <div class="col mt-5 text-center">
+          <a href="../view/login.html">
+              <button class="btn  btn-lg btnCss text-white mt-3">
+                  <img src="../img/logOut.png" alt="" class="btnImageCss">
+                  Log Out
+              </button>
+          </a>
+      </div>
+
+
+  </div>
+
+  <div id="main">
+    <span id="menuButton" style="font-size:30px;cursor:pointer; color: #000000" onclick="openNav()">&#9776;</span>
+  </div>
+
+</div>
+
+
+
+<div class="container-fluid dashBordSet">
+  <div class="row">
+
+    <div class="col-12 col-xxl-9 col-xl-9 col-lg-9 col-md-9">
+      <h1>Stock</h1>
+    </div>
+
+
+    <div class="col-12 col-xxl-12 col-xl-12 col-lg-12 mt-1 table-responsive p-0  mt-5">
+      <table class="table">
+
+        <thead>
+        <tr>
+          <th scope="col">Stock Code</th>
+          <th scope="col">Item Code</th>
+          <th scope="col">Item Size</th>
+          <th scope="col">Quantity</th>
+
+        </tr>
+        </thead>
+        <tbody id="stock_Table">
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+      <div class="d-flex justify-content-end">
+          <a href="../view/item.html" class="col-12 d-flex justify-content-end" style="text-decoration: none;"> <button type="button" class="btn btn-success fw-bold col-3" id="stockPageHaveBuyBtn">Buy Item</button></a>
+      </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../Controller/mobileNavJs.js"></script>
+<script src="../Controller/StockController.js" type="module"></script>
+</body>
+</html>

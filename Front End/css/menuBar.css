@@ -1,0 +1,116 @@
+
+.sidenav {
+    height: 98%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 1%;
+    border-radius: 20px;
+    left: 0.3%;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffc800;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #ffc800;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+
+
+body {
+    font-family: 'K2D', sans-serif;
+}
+
+
+.btnCss{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    width: 236px;
+    height: 64px;
+
+}
+
+.btnImageCss {
+    width: 30px;
+    height: 30px;
+    margin-right: 26px; /* Adjust the spacing between the image and text as needed */
+    vertical-align: middle; /* Align the image vertically with the text */
+}
+.dashbordImagecss {
+    width: 63px;
+    height: 58px;
+    margin-right: 26px; /* Adjust the spacing between the image and text as needed */
+    vertical-align: middle; /* Align the image vertically with the text */
+}
+.saleImage{
+    margin-right: 68px;
+}
+
+.logoCss{
+    width: 30%;
+    left: -21px;
+}
+
+.dashBordSet{
+   position: absolute;
+   left: 280px;
+   width: calc(100% - 280px);
+
+}
+
+.rowColur{
+    background-color: #D5DBDB;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+@media (min-width: 748px) {
+    #menuButton {
+        display: none;
+    }
+    #closeButton {
+        display: none;
+    }
+}
+
+
+@media (max-width: 748px) {
+    .dashBordSet{
+        position: absolute;
+        left: 10px;
+        width: 100%;
+
+    }
+}
+
